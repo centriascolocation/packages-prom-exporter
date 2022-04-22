@@ -16,7 +16,7 @@ Options = namedtuple('Options', ['security_updates_unattended', 'show_package_na
 scheduler = BlockingScheduler()
 
 NUM_UPDATES = Gauge('packages_updates', 'Number of available apt updates')
-NUM_SECURITY_UPDATES = Gauge('packeges_security_updates', 'Number of available apt security updates')
+NUM_SECURITY_UPDATES = Gauge('packages_security_updates', 'Number of available apt security updates')
 
 
 def check_apt():
