@@ -9,7 +9,7 @@ README = (HERE / "README.md").read_text()
 
 setup(
     name='packages-prom-exporter',
-    version='0.0.1',
+    version='0.0.2',
     packages=[''],
     url='https://github.com/centriascolocation/packages-prom-exporter',
     license='Apache License 2.0',
