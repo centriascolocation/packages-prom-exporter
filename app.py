@@ -15,8 +15,8 @@ Options = namedtuple('Options', ['security_updates_unattended', 'show_package_na
 
 scheduler = BlockingScheduler()
 
-NUM_UPDATES = Gauge('packages_updates', 'Number of available apt updates')
-NUM_SECURITY_UPDATES = Gauge('packages_security_updates', 'Number of available apt security updates')
+NUM_UPDATES = Gauge('prom_packages_updates', 'Number of available apt updates')
+NUM_SECURITY_UPDATES = Gauge('prom_packages_security_updates', 'Number of available apt security updates')
 
 
 def check_apt():
@@ -31,5 +31,5 @@ def run_app():
     # Start up the server to expose the metrics.
     start_http_server(8000)
 
-    scheduler.add_job(check_apt, 'interval', hours=12)
+    scheduler.add_job(check_apt, 'interval', hours=1)
     scheduler.start()
