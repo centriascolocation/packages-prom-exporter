@@ -8,7 +8,7 @@ HERE = pathlib.Path(__file__).parent
 README = (HERE / "README.md").read_text()
 
 setup(
-    name='packages-prom-exporter'',
+    name='packages-prom-exporter',
     version='0.0.1',
     packages=[''],
     url='https://github.com/centriascolocation/packages-prom-exporter',
