@@ -8,8 +8,8 @@ HERE = pathlib.Path(__file__).parent
 README = (HERE / "README.md").read_text()
 
 setup(
-    name='apt-prom-exporter',
-    version='0.1.2',
+    name='packages-prom-exporter'',
+    version='0.0.1',
     packages=[''],
     url='https://github.com/Alpha200/apt-prom-exporter',
     license='Apache License 2.0',
