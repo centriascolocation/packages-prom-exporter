@@ -11,7 +11,7 @@ setup(
     name='packages-prom-exporter'',
     version='0.0.1',
     packages=[''],
-    url='https://github.com/Alpha200/apt-prom-exporter',
+    url='https://github.com/centriascolocation/packages-prom-exporter.git',
     license='Apache License 2.0',
     long_description=README,
     long_description_content_type="text/markdown",
