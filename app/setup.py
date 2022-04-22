@@ -17,7 +17,7 @@ setup(
     long_description_content_type="text/markdown",
     author='Dirk Piethan',
     author_email='dirk@centrias.de',
-    description='Prometheus exporter for available apt package updates',
+    description='Prometheus exporter for available linux package updates',
     install_requires=[
         'prometheus_client',
         'apscheduler',
