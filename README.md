@@ -29,7 +29,7 @@ pip3 install git+https://github.com/centriascolocation/packages-prom-exporter.gi
 Create this file ```/etc/systemd/system/packages-prom-exporter.service```:
 
 ```shell
-Unit]
+[Unit]
 Description=This Prometheus Exporter informs you about the current Yum and APT updates.
 
 [Service]
