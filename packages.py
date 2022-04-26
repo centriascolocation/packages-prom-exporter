@@ -16,7 +16,7 @@ def _get_manager():
    elif platform == "darwin":
         return "MacOS"
    elif platform == "win32":
-        return ("Lauf weg")
+        return ("win32")
 
 def checkupdates():
 
