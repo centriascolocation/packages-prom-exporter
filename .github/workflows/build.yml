@@ -35,5 +35,5 @@ jobs:
       - name: Upload Binary to GitHub Releases
         uses: softprops/action-gh-release@v2
         with:
-          files: output/packages_prom_exporter
+          files: output/packages-prom-exporter
           token: ${{ secrets.GITHUB_TOKEN }}
