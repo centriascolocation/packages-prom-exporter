@@ -15,6 +15,7 @@ jobs:
       - name: Install Dependencies
         run: |
           apt-get update && apt-get install -y gcc patchelf
+          pip install --no-cache-dir -r requirements.txt
           pip install --no-cache-dir pyinstaller
 
       - name: Checkout Repository
@@ -22,7 +23,7 @@ jobs:
 
       - name: Build the Executable
         run: |
-          pyinstaller --onefile packages-prom-exporter
+          pyinstaller --onefile --hidden-import=prometheus_client packages-prom-exporter
           mkdir -p output
           mv dist/packages-prom-exporter output/
 
