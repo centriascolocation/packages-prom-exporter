@@ -23,9 +23,9 @@ jobs:
 
       - name: Build the Executable
         run: |
-          pyinstaller --onefile packages_prom_exporter
+          pyinstaller --onefile packages-prom-exporter
           mkdir -p output
-          mv dist/packages_prom_exporter output/
+          mv dist/packages-prom-exporter output/
 
       - name: Upload Binary as Artifact
         uses: actions/upload-artifact@v4
