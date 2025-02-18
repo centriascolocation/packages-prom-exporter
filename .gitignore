@@ -1,2 +1,4 @@
 .idea
 app/nohup.out
+build
+dist
