@@ -23,7 +23,7 @@ jobs:
 
       - name: Build the Executable
         run: |
-          pyinstaller --onefile packages_prom_exporter.py
+          pyinstaller --onefile packages_prom_exporter
           mkdir -p output
           mv dist/packages_prom_exporter output/
 
