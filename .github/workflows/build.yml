@@ -2,9 +2,8 @@ name: Build Binary
 
 on:
   push:
-    branches:
-      - main
-      - 1-issue-with-pip3-install-on-ubuntu-2404-externally-managed-environment1-issue-with-pip3-install-on-ubuntu-2404-externally-managed-environment
+    tags:
+      - "v*"
   pull_request:
 
 jobs:
