@@ -6,10 +6,18 @@ This Prometheus Exporter informs you about the current Yum and APT updates.
 
 The exporter requires Python3 and pip3 for installation.
 
-### Ubuntu / Debian
+### Ubuntu / Debian 
+
 
 ```shell
 apt-get update && apt-get install python3 pip python3-apt git -y
+```
+
+> :bulb: **Hint:**  
+> I case of Ubuntu >= 24.04 we need to install additionally pipenv.
+
+```shell
+apt-get install pipenv -y
 ```
 
 ### Red Hat based
@@ -20,8 +28,32 @@ yum install python3 pip3 git -y
 
 ## Installation
 
+
+
 ```shell
 pip3 install git+https://github.com/centriascolocation/packages-prom-exporter.git
+```
+
+> :bulb: **Hint:**  
+> I case of Ubuntu >= 24.04 we need to run pipenv.
+
+```shell
+mkdir -p /opt/packages-prom-exporter
+cd /opt/packages-prom-exporter
+pipenv install
+pipenv shell
+pip3 install git+https://github.com/centriascolocation/packages-prom-exporter.git
+```
+
+Get your Python version
+```shell
+python --version
+Python 3.11.2
+```
+
+Create the symbolic link, please use the right Python version:
+```shell
+ln -s /usr/lib/python3/dist-packages/apt* $(pipenv --venv)/lib/python3.11/site-packages/
 ```
 
 ### systemd
@@ -34,6 +66,26 @@ Description=This Prometheus Exporter informs you about the current Yum and APT u
 
 [Service]
 ExecStart=/usr/local/bin/packages-prom-exporter
+
+[Install]
+WantedBy=multi-user.target
+```
+
+> :bulb: **Hint:**  
+> I case of Ubuntu >= 24.04 we need to use pipenv.
+
+```shell
+[Unit]
+Description=Prometheus Exporter for Yum and APT updates
+After=network.target
+
+[Service]
+User=root
+Group=root
+Environment="TZ=UTC"
+WorkingDirectory=/opt/packages-prom-exporter
+ExecStart=/usr/bin/pipenv run packages-prom-exporter
+Restart=always
 
 [Install]
 WantedBy=multi-user.target
